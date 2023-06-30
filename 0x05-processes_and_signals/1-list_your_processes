@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# write bash script that list all process and their PID, sorted by PID
+ps -auxf
