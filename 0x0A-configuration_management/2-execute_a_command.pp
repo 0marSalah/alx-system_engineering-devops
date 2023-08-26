@@ -1,3 +1,5 @@
+# execute a command -- kill process -- only if a condition is true
+
 exec { 'kill-killmenow-process':
   command   => 'pkill killmenow',
   onlyif    => 'pgrep killmenow',
