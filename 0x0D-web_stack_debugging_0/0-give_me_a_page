@@ -1,31 +1,5 @@
 #!/usr/bin/env bash
 # Start Apache so as to return a
 # page conatining Hello Holberton
-
-# install or update apche2
-apt-get install -y apache2
-
-# start apache
+echo "ServerName localhost" >> /etc/apache2.conf
 service apache2 start
-
-# remove the old page
-rm /var/www/html/index.html
-
-# write Hello Holberton to the new page
-echo "Hello Holberton" > /var/www/html/index.html
-
-# Change the port in ports.conf:
-sed -i 's/Listen 80/Listen 8080/' /etc/apache2/ports.conf
-
-# Change the virtual host configuration
-sed -i 's/<VirtualHost \*:80>/<VirtualHost \*:8080>/' /etc/apache2/sites-enabled/000-default.conf
-
-# Restart Apache
-service apache2 restart
-
-# Check the new page
-curl localhost:8080
-# Hello Holberton
-
-# stop apache
-service apache2 stop
