@@ -41,12 +41,13 @@ defaults
 
 frontend th3gr00t-tech-frontend
     bind *:80
-    default_backend th3gr00t-tech-backend
+	mode http
+    default_backend omar-274822
 
-backend th3gr00t-tech-backend
+backend omar-274822
     balance roundrobin
-    server 453-web-01 35.243.128.200:80 check
-    server 453-web-02 3.239.120.96:80 check
+    server 274822-web-01 54.87.228.212:80 check
+    server 274822-web-02 54.236.50.147:80 check
 "
 
 # shellcheck disable=SC2154
