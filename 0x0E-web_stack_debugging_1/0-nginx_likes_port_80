@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
-# make nginx listen on 80
-sudo sed -i "s/8080/80/" /etc/nginx/sites-enabled/default
-sudo service nginx start
+# nginx love 80
+file=/etc/nginx/sites-enabled/default
+sed -i 's/8080 default/80 default/' $file
+sudo service nginx restart
