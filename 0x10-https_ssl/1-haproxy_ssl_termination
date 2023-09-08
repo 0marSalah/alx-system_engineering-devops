@@ -10,14 +10,16 @@ defaults
     timeout client  30s
     timeout server  30s
 
-frontend omar-tech-frontend
+frontend www-http
     bind *:80
+    reqadd X-Forwarded-Proto:\ http
+    default_backend web-backend
+frontend www-https
     bind *:443 ssl crt /etc/ssl/certs/ssl.pem
-    http-request redirect scheme https unless { ssl_fc }
-    http-request set-header X-Forwarded-Proto https
-    default_backend omar-274822
-
-backend omar-274822
+    reqadd X-Forwarded-Proto:\ https
+    default_backend web-backend
+backend web-backend
     balance roundrobin
+    redirect scheme https if !{ ssl_fc }
     server 274822-web-01 54.87.228.212:80 check
     server 274822-web-02 54.236.50.147:80 check
