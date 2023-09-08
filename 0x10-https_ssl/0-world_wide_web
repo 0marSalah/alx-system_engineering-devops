@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 # Displays informtation about subdomains.
 
-# uncomment for debugging purposes.
-# set -x
-
 # for the checker to work please remove the colors.
 
 # colors
@@ -23,7 +20,8 @@ dig_cmd () {
 	IP=$(echo "$INFO" | awk '{print $5}')
 	RECORD=$(echo "$INFO" | awk '{print $4}')
 
-	echo -e "${brown}The subdomain ${blue}$sub${brown} is a ${blue}$RECORD${brown} record and points to ${blue}$IP${reset}"
+	echo -e "${brown}The subdomain ${blue}$sub${brown} \
+is a ${blue}$RECORD${brown} record and points to ${blue}$IP${reset}"
 }
 
 if [ $# -eq 1 ]; then
