@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # setup a few rules with firewall (ufw)
 
+sudo apt update
 sudo apt dist-upgrade
 sudo apt install ufw
-ufw --version
 sudo ufw status
 ufw default allow outgoing
 sudo ufw default allow outgoing
