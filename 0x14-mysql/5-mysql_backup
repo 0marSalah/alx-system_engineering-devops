@@ -15,6 +15,4 @@ _date=$(date +"%Y%m%d%H%M%S")
 
 tar -czf "$_date".tar.gz backup.sql
 
-rm -f backup.sql
-
 echo "Backup is successfully created:${current_date}.tar.gz"
