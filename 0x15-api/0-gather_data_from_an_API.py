@@ -34,7 +34,7 @@ if __name__ == "__main__":
                 f"Employee {name} is done with tasks({done_tasks}/{total_tasks}):"
             )
             for task in completed_tasks:
-                print('\t' + task)
+                print('\t ' + task)
 
     except urllib.error.URLError as e:
         print(f"Error fetching the URL: {e.reason}")
