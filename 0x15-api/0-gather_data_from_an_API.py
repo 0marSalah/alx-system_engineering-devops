@@ -37,3 +37,6 @@ try:
 
 except urllib.error.URLError as e:
     print(f"Error fetching the URL: {e.reason}")
+
+if __name__ == "__main__":
+    pass
