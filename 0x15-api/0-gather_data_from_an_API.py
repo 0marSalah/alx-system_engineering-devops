@@ -5,9 +5,9 @@ import urllib.request
 import urllib.error
 import json
 
-id = sys.argv[1]
+uid = sys.argv[1]
 
-users_url = 'https://jsonplaceholder.typicode.com/users/' + id
+users_url = 'https://jsonplaceholder.typicode.com/users/' + uid
 todo_url = 'https://jsonplaceholder.typicode.com/todos/'
 
 try:
@@ -21,7 +21,7 @@ try:
         done_tasks = 0
         completed_tasks = []
         for todo in data:
-            if todo['userId'] == int(id):
+            if todo['userId'] == int(uid):
                 todos.append(todo)
                 if todo['completed'] is True:
                     done_tasks += 1
