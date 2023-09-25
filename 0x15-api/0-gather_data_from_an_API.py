@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """ a Python script that, using this REST API, for a given employee ID """
-import sys
-import urllib.request
-import urllib.error
 import json
+import sys
+import urllib.error
+import urllib.request
 
 if __name__ == "__main__":
     uid = sys.argv[1]
@@ -31,11 +31,14 @@ if __name__ == "__main__":
             name = user['name']
             total_tasks = len(todos)
             print(
-                f"Employee {name} is done with tasks({done_tasks}/{total_tasks}):"
+                "Employee {} is done with tasks({}/{}):".format(
+                    name,
+                    done_tasks,
+                    total_tasks
+                )
             )
             for task in completed_tasks:
                 print('\t ' + task)
 
     except urllib.error.URLError as e:
         print(f"Error fetching the URL: {e.reason}")
-
