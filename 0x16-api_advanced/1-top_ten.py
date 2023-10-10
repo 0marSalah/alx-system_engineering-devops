@@ -21,6 +21,3 @@ def top_ten(subreddit):
     data = response.json()
     for post in data.get("data", {}).get("children", []):
         print(post.get("data", {}).get("title", ""))
-
-
-top_ten("programming")
