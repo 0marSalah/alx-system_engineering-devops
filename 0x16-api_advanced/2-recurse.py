@@ -1,17 +1,19 @@
 #!/usr/bin/python3
-'''A module containing functions for working with the Reddit API.
-'''
+"""
+A module containing functions for working with the Reddit API.
+"""
 import requests
 
 
 BASE_URL = 'https://www.reddit.com'
-'''Reddit's base API URL.
-'''
+"""Reddit's base API URL.
+"""
 
 
 def recurse(subreddit, hot_list=[], n=0, after=None):
-    '''Retrieves a list of hot posts from a given subreddit.
-    '''
+    """
+    Retrieves a list of hot posts from a given subreddit.
+    """
     api_headers = {
         'Accept': 'application/json',
         'User-Agent': 'Mozilla/5.0'
