@@ -21,6 +21,3 @@ def number_of_subscribers(subreddit):
 
     data = response.json()
     return data.get("data", {}).get("subscribers", 0)
-
-
-print(f"Number of subscribers: {number_of_subscribers('programming')}")
