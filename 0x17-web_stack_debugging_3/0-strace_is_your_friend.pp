@@ -1,6 +1,6 @@
-# fix 500 internal server error
+# Fixes bad `phpp` extensions to `php` in the WordPress file `wp-settings.php`.
 
-exec { 'fix-php-typo':
-    command => 'sudo sed -i "s/phpp/php/" /var/www/html/wp-settings.php',
-    provider => shell,
+exec { 'fix-wordpress':
+  command => 'sed -i s/phpp/php/g /var/www/html/wp-settings.php',
+  path    => '/usr/local/bin/:/bin/'
 }
